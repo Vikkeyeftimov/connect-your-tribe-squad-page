@@ -1,6 +1,15 @@
+:root{
+    --maincolorFire: red;
+    --maincolorWater: blue;
+    --maincolorAir: grey;
+    --maincolorEarth: green;
+}
 
 ul{
     list-style-type: none;
 }
 
-
+ul{
+    background-image: url("battlefieldachtergrond.jpg");
+    background-size: cover;
+}
