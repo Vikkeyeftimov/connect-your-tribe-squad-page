@@ -1,91 +1,121 @@
 <%- include('./partials/head') %>
 
-<img class="achtergrond" src="/battlefieldachtergrond.jpg" alt="de oude kapotte stad">
+<main class="screen">
 
-<!-- 1E AIR CARD START -->
+  <section class="desktop">
 
-<section class="airsection">
-<ul class="eerste-slide-air">
-  <li>
-      <img src="air.png" alt="air element">
-      <p>Air</p>
-      <h3>Air 'nickname'</h3>
-      <img src="/linkervleugel.png" alt="left wing">
-      <img class="unknow" src="/unknowperson.jpg" alt="Avatar van klassgenoten">
-      <img src="/rechtervleugel.png" alt="right wing">
-        <li>
-          <img src="/unknowperson.jpg" alt="ander opties die je nog moet">
-          <img src="/unknowperson.jpg" alt="ander opties die je nog moet">
-          <img src="/unknowperson.jpg" alt="ander opties die je nog moet">          
-          <img src="/unknowperson.jpg" alt="ander opties die je nog moet">
-        </li>
-  </li>
-</ul>
-</section>
+    <ul class="desktop_items">
+      <li><button href="#"> <img src="images/icon/839.ico" alt=""><div><p>home</p></div></button></li>
+      <li><button popovertarget="team" popovertargetaction="show" > <img src="/images/icon/1012.ico" alt="personal card icon"><div><p>Team</p></div></button></li>
+      <!-- <li><button popovertarget="music" > <img src="images/icon/1221.ico" alt="music icon"><div><p>Music</p></div></button></li> -->
+      <li><button popovertarget="sprint" popovertargetaction="show" > <img src="images/icon/1224.ico" alt="sprint icon"><div><p>sprint</p></div></button></li>
+      <li><button popovertarget="game" popovertargetaction="show" > <img src="/images/tumblr_b08776446c99e97ddb6379663d96b2ab_f289af9d_541.png" alt="game icon" width="60"><p>game center</p></button></li>
+      <li class="github_icon"><button><a href="https://github.com/christoph3r3w/brilletjes-squad-page"><img src="images/github.png" sizes="80" alt=""><div><p>github</p></div></a></button></li>
 
-<!-- 1E AIR CARD END  -->
-<!-- 1E FIRE CARD START -->
+    </ul>
 
-<ul class="eerste-slide-fire">
-  <li>
-      <img src="fire.png" alt="fire element">
-      <p>Fire<p>
-      <h3>Fire 'nickname'</h3>
-      <img src="/vuurcirkel.png" alt="vuur cirkel">
-      <img src="/unknowperson.jpg" alt="Avatar van klassgenoten">
-      <img src="/vuurring.png" alt="vuurring">
-        <li>
-          <img src="/unknowperson.jpg" alt="ander opties die je nog moet">
-          <img src="/unknowperson.jpg" alt="ander opties die je nog moet">
-          <img src="/unknowperson.jpg" alt="ander opties die je nog moet">          
-          <img src="/unknowperson.jpg" alt="ander opties die je nog moet">
-        </li>
-  </li>
-</ul>
+    <button class="squad-games" popovertarget="squad" popovertargetaction="show" > <img src="/images/tumblr_17c0ad544b477d33533ac296a483d7f7_d1609efa_540.png" alt="squad icon" width="60"><div><p>squad-game</p></div></button>
 
-<!-- 1E FIRE CARD END -->
-<!-- 1E WATER CARD START -->
+    <button class="trash_can"><a href="#"> <img src="images/icon/261.ico" alt=""></a></button>
 
-<ul class="eerste-slide-water">
-  <li>
-    <img src="water.png" alt="water element">
-    <p>Water<p>
-    <h3>Water 'nickname'</h3>
-    <img src="/watercirkel.png" alt="water cirkel">
-    <img src="/unknowperson.jpg" alt="Avatar van klassgenoten">
-    <img src="/watereffectbovenkant.png" alt="water effect">
-    <img src="/watereffectzijkant.png" alt="water effect">    
-      <li>
-        <img src="/unknowperson.jpg" alt="ander opties die je nog moet">
-        <img src="/unknowperson.jpg" alt="ander opties die je nog moet">
-        <img src="/unknowperson.jpg" alt="ander opties die je nog moet">          
-        <img src="/unknowperson.jpg" alt="ander opties die je nog moet">
-  </li>
-</ul>
+         
+      <div popover="manual" id="team" class="window_card" >
+        <%- include('./partials/window_team', {window_team: '',window_type:'team'}) %> 
+      </div>
 
-<!-- 1E WATER CARD END -->
-<!-- 1E EARTH CARD START -->
+      <div popover="manual" id="sprint" class="window_card" >
+        <%- include('./partials/window_sprint', {window_sprint: '',window_type:'sprint'}) %> 
+      </div>
 
-<ul class="eerste-slide-earth">
-  <li>
-    <img src="earth.png" alt="earth element">
-    <p>Earth<p>
-    <h3>Earth 'nickname'</h3>
-    <img src="/earthbolder.png" alt="earth cirkel">
-    <img src="/unknowperson.jpg" alt="Avatar van klassgenoten">
-    <img src="/earthvines.png" alt="vine effect">
-    <img src="/earthvine2.png" alt="vine effect">    
-      <li>
-        <img src="/unknowperson.jpg" alt="ander opties die je nog moet">
-        <img src="/unknowperson.jpg" alt="ander opties die je nog moet">
-        <img src="/unknowperson.jpg" alt="ander opties die je nog moet">          
-        <img src="/unknowperson.jpg" alt="ander opties die je nog moet">
-  </li>
+      <div popover="manual" id="game" class="window_card" >
+        <%- include('./partials/window_game', {window_game: '',window_type:'game'}) %> 
+      </div>
 
-<!-- 1E EARTH CARD END -->
+      <div popover="manual" id="squad" class="window_card" >
+        <%- include('./partials/window_squad', {window_squad: '',window_type:'squad'}) %> 
+      </div>
+
+
+      <!-- start button menu -->
+    <div popover anchor="start_b" id="start_menu">
+      <header class="start_bar_header">
+        <img src="<%= data_c.avatar %>" alt="header avatar">
+        <p><%= data_c.name %></p>
+      </header>
+      <div>
+        <menu class="main_icons">
+          <li><a href="#"> <img src="images/icon/839.ico" alt=""><div><p>home</p></div></a></li>
+          <li><button popovertarget="personal"> <img src="images/chris icon lowlowres.png" alt=""><div><p>personal</p></div></button></li>
+          <li><button popovertarget="music"> <img src="images/icon/1221.ico" alt=""><div><p>Music</p></div></button></li>
+          <li><button popovertarget="sprint" > <img src="images/icon/1224.ico" alt=""><div><p>sprint</p></div></button></li>
+          <li><a href="<%= data_c.website %>"><img src="images/github.png" sizes="80" alt=""><div><p>github</p></div></a></li>
+    
+        </menu>
+
+        <menu class="other_icon">
+          <li>
+            <img src="" alt="">
+            <p></p>
+          </li>
+          <li>
+            <img src="" alt="">
+            <p></p>
+          </li>
+          <li>
+            <img src="" alt="">
+            <p></p>
+          </li>
+          <li>
+            <img src="" alt="">
+            <p></p>
+          </li>
+          <li>
+            <img src="" alt="">
+            <p></p>
+          </li>
+          <li>
+            <img src="" alt="">
+            <p></p>
+          </li>
+          <li>
+            <img src="" alt="">
+            <p></p>
+          </li>
+        </menu>
+      </div>
+
+    </div>
+
+   
+
+  </section>
+ 
+  <footer class="taskbar">
+    <nav>
+      <button id="start_b" class="start" popovertarget="start_menu" popovertargetaction="show"><img src="images/pngwing.com.png" alt="windows logo" sizes="20" > <p>start</p></button>
+      <div class="bar"></div>
+      <div class="extra_icons">
+        <ul>
+          <li><button class="window_theme"><img src="images/icon/1005.ico" alt="theme button"></button></li>
+          <li><a href="#"><img src="images/icon/975.ico" alt="info button"> </a></li>
+          <li><a href="#"><img src="images/icon/952.ico" alt="internet icon"> </a></li>
+          <li><p class="current_T">11:11</p></li>
+        </ul>
+
+        
+      </div>
+    </nav>
+  </footer>
+  
+
+
+
+
+  
+</main>
+
+
 
 <%- include('./partials/foot') %>
 
-<!-- <% persons.forEach(person => { %>
-    <li><a href="./person/<%= person.id %>"><%= person.name %></a>, squad_id <%= person.squad_id %></li>
-  <% }) %> -->
+

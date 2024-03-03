@@ -1,0 +1,32 @@
+<%= window_game %>
+
+<%- include('./window_head', {window_head: '',window_type:window_type}) %>  
+
+<%- include('./window_aside_bottom', {window_a_b: ''}) %> 
+<section class="window_content">
+
+    <!-- <ul class="window_game_items">
+        
+                <li class="intro_s_squad">
+            <button popovertarget="squad" popovertargetaction="show" class="to_squad"></button>
+            <h3>Your character</h3>
+            <p>here you see your character </p>
+        </li>
+
+
+
+    </ul> -->
+        
+   
+<form>
+    <select>
+        <% persons.forEach(person => { %>
+            <option><a href="./person/<%= person.id %>"><%= person.name %></a>, squad_id <%= person.squad_id %>,<%= person.prefix %></option>
+        <% }) %>
+    </select>
+    <button type="submit">👍🏿</button>
+</form>
+
+   
+
+</section>
